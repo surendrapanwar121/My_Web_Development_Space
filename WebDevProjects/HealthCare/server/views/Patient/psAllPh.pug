@@ -1,0 +1,36 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psAllPh.css")
+
+block content
+    .container 
+        if prescriptionId == 'nill'
+            h3 Our Best Phamacies For You.
+        else 
+            h3 Select Pharmacy from which you want to order Medicine.
+        .row 
+            each item in pharmacies 
+                if prescriptionId == 'nill'
+                    -var buyMedicine = '/patient/psPrescription/' + item.username;
+                else 
+                    -var buyMedicine = '/patient/buyMedicine/' + prescriptionId + '/' + item.username;
+                - var phName = item.username;
+                - var imgUrl = '/uploads/' + item.imgName;
+                .col-lg-3.col-md-4.col-6.boxx
+                    .card
+                        img.card-img-top(src=imgUrl, alt='We Will Attach Image Soon')
+                        .card-body
+                            h4.card-title #{item.type}
+                            p.card-text #{item.firstname} #{item.lastname}
+                            p Number #{item.number}
+                            p ShopName:- #{item.shopname}   
+                            a.btn.card-link.btn-outline-secondary.btn-lg(href=buyMedicine)
+                                if prescriptionId == 'nill'
+                                    i.fas.fa-pills
+                                        |  Buy Medicine From This Pharmacy
+                                else 
+                                    i.fas.fa-check
+                                        |  Select This Pharmacy
+
+

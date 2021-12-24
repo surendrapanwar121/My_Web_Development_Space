@@ -1,0 +1,49 @@
+extends phLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Pharmacy/phAllOrders.css")
+
+block content
+    .container 
+        h3 All Orders 
+        -var i=1;
+        each item in orders
+            if ( item.state != 'Rejected' && item.visibility != 'PATIENT' )
+                -var timestamp = item._id.getTimestamp();
+                -var delOrder = '/pharmacy/phDeleteOrder/' + item._id;
+                -var rejOrder = '/pharmacy/phRejectOrder/' + item._id;
+                -var conformOrder = '/pharmacy/phConfromOrder/' + item._id;
+                -var orderDelivered = '/pharmacy/phOrderDelivered/' + item._id;
+                .card.text-center
+                        .card-header
+                            p.left #{i++}.
+                            p.right  #{item.state}
+                            | Doctor #{item.pharmacist.firstname} #{item.pharmacist.lastname}
+                        .card-body
+                            p PRESCRIPTION
+                            p=item.prescription
+                            if item.state!= 'Pending'
+                                p Price:- #{item.price}
+                                p Delivery Date:- #{item.deliveryDate}
+                                p Deliver Address:- #{item.deliveryAddress}
+                            if item.state == 'Pending'
+                                a.btn.btn1.btn-light.btn-lg.download-button(href=conformOrder)
+                                    i.fas.fa-check
+                                        |  Conform Order
+                                a.btn.btn2.btn-light.btn-lg.download-button(href=rejOrder)
+                                    i.fas.fa-window-close
+                                        |  Reject Order 
+                        if item.state == 'Waiting for Patient Conformation'
+                            a.btn.btn1.btn-light.btn-lg.download-button(href=delOrder)
+                                i.fas.fa-trash-alt
+                                    |  Delete From Order List
+                        if item.state == 'On Way'
+                            a.btn.btn1.btn-light.btn-lg.download-button(href=orderDelivered)
+                                i.fas.fa-box-open
+                                    |  Order Delivered
+                        if item.state == 'Delivered'
+                            a.btn.btn2.btn-light.btn-lg.download-button(href=delOrder)
+                                i.fas.fa-trash-alt
+                                    |  Delete 
+        
+                        

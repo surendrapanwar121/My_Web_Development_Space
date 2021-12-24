@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title HealthCare
+    //- Google Fonts
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap' rel='stylesheet')
+    //- Font Awesome
+    script(src='https://kit.fontawesome.com/9804323a8e.js' crossorigin='anonymous')
+
+    //- CSS StyleSheets
+    link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+    block style
+    //- Bootstarp Scripts
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM' crossorigin='anonymous')
+
+  body
+    //- Title Section
+    section.title
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+        a.navbar-brand(href='/') HealthCare
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarTogglerDemo02' aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarTogglerDemo02.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li.nav-item.dropdown
+              a#navbarDropdown.nav-link.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')  SignUp 
+              ul.dropdown-menu(aria-labelledby='navbarDropdown')
+                li
+                  a.dropdown-item(href='/users/loginSignup/dc') As a Doctor
+                li
+                  a.dropdown-item(href='/users/loginSignup/ph') As a Pharmaciest
+                li
+                  hr.dropdown-divider
+                li
+                  a.dropdown-item(href='/users/loginSignup/ps') As a Patient
+            li.nav-item
+              a.nav-link(href='/users/login') Login
+            li.nav-item
+              a.nav-link(href='/about') AboutUs
+    block content

@@ -1,0 +1,8 @@
+body{
+    background-color: rgb(172, 187, 187);
+}
+.greenAuto{
+    color: green;
+    font-size: 2rem;
+    text-align: center;
+}

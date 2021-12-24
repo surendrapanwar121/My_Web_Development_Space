@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <style>
+           .cont{background-color:#714141;
+                 border-radius: 20px;
+                }
+           .cont li{float: left;
+                    list-style: none; 
+                    margin: 12px 8px; 
+                   } 
+            .cont ul{overflow: auto;}    
+            .cont li a{ color: white;
+                        text-decoration: none;
+                      } 
+            .cont li a:hover{color: blue;} 
+            .search{
+                    /* border: solid black 2px; */
+                    /* border-radius: 10px; */
+                    /* margin: 11px 6px; */
+                    /* float:right; */
+                   } 
+            #lab{width: 100px;
+                 margin: 11px 6px;
+                 float:right;
+                 padding: 3px;
+                 border-radius: 14px;
+                }                   
+    </style>
+</head>
+<body>
+     <nav  class="cont" >
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact us</a></li>  
+        <div class="search">
+         <input type="text" name="seh" id="lab" placeholder="Search Here">
+        </div> 
+      </ul>
+    </nav>
+</body>
+</html>

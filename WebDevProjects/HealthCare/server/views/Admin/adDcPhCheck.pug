@@ -1,0 +1,29 @@
+extends adLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Admin/adDcPhCheck.css")
+
+block content
+    .warning 
+        h4 Hiiiiii
+        a.card-link.btn1.btn.btn-success(href='#') OK
+        a.card-link.btn2.btn.btn-danger(href='#') CANCEL
+    .container 
+        each item in person
+            h3 #{item.type} 
+            - var imgUrl = '/uploads/' + item.imgName;
+            img(src=imgUrl, alt="Client Image")
+            h5 Name:- #{item.firstname} #{item.lastname}
+            h5 Email:- #{item.email}
+            h5 Number:- #{item.number}
+            h5 Experience:- #{item.experience}
+            if item.type=="DOCTOR"
+                h5 Speciality:- #{item.speciality}
+            else 
+                h5 ShopName:- #{item.shopname}
+            button( value=item.username ,class="btn3 btn btn-success")
+                |APPROVE
+            button( value=item.username ,class="btn4 btn btn-danger")
+                |REJECT
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js") 
+    script(src="/javascripts/Admin/adDcPhCheck.js")

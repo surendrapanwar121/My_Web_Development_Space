@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setinterval Settimeout</title>
+    <style>
+        .container{
+            background-color: blanchedalmond;
+            border: 3px solid black;
+            font-size: 23px;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        Current Time Is : <span id="time"></span>
+    </div>
+    <script>       
+        // setTimeout and setInterval
+
+        function greet(name) {
+            console.log("Hello Good Morning "+name);
+        }
+        timeout=setTimeout(greet,3000,"Suren");
+        //console.log(timeout);
+        clearTimeout(timeout);       //It is used to delete time in setTimeout
+        intervalid=setInterval(greet,2000,"Suren");
+        clearInterval(intervalid);
+         
+        //TIME
+        let now=new Date();
+        console.log(now);
+
+        let newdate=new Date(2021,8,15,9,30,30);
+        console.log(newdate);
+        let yr=newdate.getFullYear();      // TO abstract year from our newdate
+        let dt=newdate.getDate();            // TO abstract date from our newdate
+        newdate.setDate(29);             //TO change in our newdate we use
+        function updatetime() {
+           time.innerHTML=new Date();
+        }
+        setInterval(updatetime,1000);
+</script>
+</body>
+</html>

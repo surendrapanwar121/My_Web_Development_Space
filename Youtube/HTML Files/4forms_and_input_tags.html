@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and Input Tags</title>
+</head>
+<body>
+   <h1>HTML Form</h2>
+    <form action="my_store_file.php">
+        <div>
+        <label for="label">Name</label>
+         : <input type="text" name="myname" id="label">  
+       </div>
+       <br>
+           <div>
+             Roll: <input type="text" name="rollno">
+           </div>
+           <br>
+           Gmail: <input type="email" name="mygmail">
+           <br><br>
+           Date : <input type="date" name="Mydate">
+           <h4>Gender</h4>
+           male:<input type="radio" name="gender">
+           female:<input type="radio" name="gender">
+           <br><br> <h4>Field of Interst</h4>
+           Coding:<input type="radio" name="post">
+           Developing:<input type="radio" name="post">
+           <br><br>
+           <label for="mee">Select me If you like this page.</label>
+            <input type="checkbox" name="choice" id="mee">
+           <br><br>
+            Select a Language in which you want to like coding:<select name="lang" id="me2">
+               <option value="j">Java</option>
+               <option value="c+">C++</option>
+               <option value="py">Python</option>
+               <option value="c">C</option>
+           </select>
+           <br><br>
+           Write here about this website:<br><textarea name="mynote" rows="8" cols="50"></textarea>
+           <br><br>
+           <input type="submit" value="submit">   
+           <br><br>
+           <input type="reset" value="resetmydata">
+    </form>
+
+</body>
+</html>

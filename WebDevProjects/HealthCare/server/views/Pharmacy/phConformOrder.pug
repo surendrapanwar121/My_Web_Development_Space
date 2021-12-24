@@ -1,0 +1,16 @@
+extends phLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Pharmacy/phConformOrder.css")
+
+block content
+    h2 Hello Pharmacist, Please provide date of delivery and price of order.
+    .container
+        -var conform = "/pharmacy/phConfromOrder/" + orderId;
+        form(action=conform, method="post") 
+            |Enter Delivery Date of Order:
+            input(type="date", name="deliveryDate",required)
+            |Enter Price Of Order:
+            input(type="number", name="price",required)
+            button.btn(value='',name='')
+                |Conform Order 

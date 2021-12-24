@@ -1,0 +1,28 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psBuyMedicine.css")
+
+block content 
+    h2 Hello Patient Order Your Medicines Form Pharmacy #{pharmacy.shopname} 
+    .container
+        -var link = "/patient/orderMedicines/" + prescription._id + '/' + pharmacy._id + '/' + pharmacy.username + '/' + prescription.patient._id ;
+        form(action=link, method="post") 
+            input#address1(type='checkbox' name='address1' value=prescription.patient.address)
+            label(for='address1')  Delivery to Addreess 
+            p #{prescription.patient.address}
+            br
+            .address2
+                p Or Change Address 
+                |Enter New Address  :
+                input(type="text", name="address2") 
+                input(type="hidden", name="prescription" ,value=prescription.prescription)
+            button.btn(value='',name='')
+                |Order Medicine
+            .information 
+                li Pharmacist #{pharmacy.firstname} #{pharmacy.lastname} will see your Order soon, and he will check your Prescription and reply soon with price.
+                li Check your Order section for Price.
+                li Don't worry untill your conformation we will not send you medicine.
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js") 
+    script(src="/javascripts/Patient/psBuyMedicine.js")
+        

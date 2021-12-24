@@ -1,0 +1,15 @@
+extends ../layout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/loginSignup/login.css")
+
+block content
+    .container 
+        h1 LogIn 
+        form(action="/users/login", method="post") 
+            h3 Username 
+            input(type="text" ,name="username" ,placeholder="Enter Your Username",required)
+            h4 Password
+            input(type="password" ,name="password" ,placeholder="Enter Your Password",,required)
+            button.btn 
+                |LogIn

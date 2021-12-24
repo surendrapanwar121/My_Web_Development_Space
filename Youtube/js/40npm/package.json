@@ -1,0 +1,21 @@
+{
+  "name": "40npm",
+  "version": "1.0.0",
+  "description": "This is my fisrt package in JS",
+  "main": "40npm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "awesome"
+  ],
+  "author": "Suren",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "slugify": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

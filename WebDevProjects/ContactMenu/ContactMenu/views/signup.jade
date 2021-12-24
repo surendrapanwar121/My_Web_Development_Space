@@ -1,0 +1,14 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/stylesheets/signup.css')
+
+block content
+    h1 Signup
+    form(action="/users/signup", method="post")
+        input(type="text",name="firstname",placeholder="Enter Your Firstname")
+        input(type="text",name="lastname",placeholder="Enter Your Lastname")
+        input(type="text",name="username",placeholder="Enter Your username")
+        input(type="passport",name="password",placeholder="Enter Your password")
+        button
+            |SignUp

@@ -1,0 +1,28 @@
+body{
+    background-color: #96bb7c;
+    text-align: center;
+}
+.f1{
+    margin: 10%;
+    font-family: 'Ubuntu';
+}
+input{
+    display: block;
+    margin: 1%;
+    margin-left:39%
+}
+.btn{
+    margin: 2%;
+}
+h3{
+    margin: 6% 0 4% 0;
+    font-family: 'Montserrat-Bold';
+}
+.f2{
+    font-family: 'Montserrat-Light'; 
+}
+textarea{
+    display: block;
+    margin: 2% 0 0 25%;
+    width: 70%;
+}

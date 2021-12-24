@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After Pseudo selectors.</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        header::before {
+            content: "";
+            background: url("https://source.unsplash.com/collection/190727/1600*900") no-repeat center center/cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -2;
+            opacity: 0.5;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            width: 800px;
+            border: 2px solid black;
+            align-items: center;
+            justify-content: center;
+        }
+        section::before {
+            content: "";
+            background: url("https://source.unsplash.com/collection/190726/200*800") no-repeat center center/cover;
+            position: absolute;
+            top: 55px;
+            left:10px;
+            height: 200px;
+            width: 800px;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .navigation {
+            display: flex;
+        }
+
+        .item {
+            list-style: none;
+            margin: 2px 3px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navigation">
+                <li class="item">Home</li>
+                <li class="item">About</li>
+                <li class="item">Services</li>
+                <li class="item">Contact Us</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h3>Welcome to coding World.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quae consequuntur itaque
+            repellendus amet impedit facilis aspernatur maiores? Labore asperiores non distinctio dolorem,
+            ducimus laboriosam aut! Esse libero tempore quaerat!</p>
+    </section>
+</body>
+
+</html>

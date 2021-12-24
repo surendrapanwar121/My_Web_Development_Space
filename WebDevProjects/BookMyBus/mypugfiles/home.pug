@@ -1,0 +1,16 @@
+extends base.pug
+
+//- block script
+//-     script(src='../static/index.js')
+
+block style
+    style
+        include ../static/stylehome.css
+
+block content
+    div#homesection 
+        p.para1 Welcome To BookMyBus
+        P.para2 Book Your Journey Ticket Here
+        p.para3 For Booking Tickets SignUs 
+        div.join
+            a(href="/joinus"): button.btn  JoinUS

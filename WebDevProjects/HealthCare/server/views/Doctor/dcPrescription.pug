@@ -1,0 +1,28 @@
+extends dcLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Doctor/dcPrescription.css")
+
+block content
+    .container 
+        h3 All Prescription 
+        h4 Make Prescription for your patient go ahead.
+            a.btn(href='/doctor/makePrescription/nothing/nill')
+                i.features-icon.fas.fa-4x.fa-hand-point-right 
+        -var i=1;
+        each item in prescriptions
+            if item.visibility != 'PATIENT'
+                -var timestamp = item._id.getTimestamp();
+                -var delPrescription = '/doctor/dcDeletePrescription/' + item._id;
+                .card.text-center
+                        .card-header
+                            p.left #{i++}.
+                            p.right Disease #{item.disease}
+                            | Patient #{item.patient.firstname} #{item.patient.lastname}
+                        .card-body
+                            p PRESCRIPTION
+                            p Created On #{timestamp}
+                            p=item.prescription
+                        a.btn.btn2.btn-light.btn-lg.download-button(href=delPrescription)
+                            i.fas.fa-trash-alt
+                                |  Delete Prescription 

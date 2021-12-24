@@ -1,0 +1,16 @@
+.container{
+    background-color: darkgray;
+    padding: 182px;
+}.myform{
+    display: flex;
+    flex-direction: column;
+}
+.mylogin{
+    justify-content: center;
+    width: 30%;
+    margin: 20px 500px;
+    padding: 10px;
+.para{
+    margin: 20px 500px;
+    padding: 10px;
+}

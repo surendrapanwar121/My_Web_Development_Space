@@ -1,0 +1,34 @@
+extends dcLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psBookAppointment.css")
+
+block content
+    -var appUrl= '/doctor/approveAppointment/' + appointmentId;
+    -var impUrl= '/doctor/updateAppointment/' + appointmentId;
+    -var rejUrl= '/doctor/rejectAppointment/' + appointmentId;
+    if no=='A'
+        .container
+            form(action=appUrl, method="post") 
+                |Enter Url For Appointment :
+                input(type="text", name="meetingLink") 
+                |Enter Extra Details For Appointment Like Zoom password :
+                input(type="text", name="meetingDetails")
+                button.btn
+                    |Approve Appointment
+    else if no=='I'
+        .container
+            form(action=impUrl, method="post") 
+                |Enter Time For Appointment :
+                input(type="time", name="time") 
+                |Enter Date For Appointment :
+                input(type="date", name="date")
+                button.btn
+                    |Improve Timing
+    else 
+        .container
+            form(action=rejUrl, method="post") 
+                |Enter Reason For Reject Appointment :
+                input(type="text", name="rejectReason")
+                button.btn
+                    |Reject Appointment

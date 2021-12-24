@@ -1,0 +1,19 @@
+extends base.pug
+
+block style
+    style
+        include ../static/stylehome.css
+        include ../static/stylejoinus.css
+
+block content
+    div.cont
+        h1 JoinUs 
+        form(action="/joinus", method="post" ,class="myform")       
+            input(type="text" ,name="name" ,class="myinput",placeholder="Enter Your Name")
+            input(type="date", name="age" ,class="myinput",placeholder="Enter Your Birth Date")
+            input(type="text" ,name="address" ,class="myinput",placeholder="Enter Your Address")
+            input(type="phone" ,name="phone" ,class="myinput",placeholder="Enter Your Phone No.")
+            input(type="email" ,name="gmail" ,class="myinput",placeholder="Enter Your Gmail")
+            input(type="password" ,name="password" ,class="myinput",placeholder="Enter Your Password")
+            button(class='btn')
+                |Submit

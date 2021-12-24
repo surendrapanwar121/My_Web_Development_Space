@@ -1,0 +1,12 @@
+extends layout
+
+block style
+  link(rel='stylesheet', href='/stylesheets/index.css')
+
+block content
+    h1 LogIn
+    form(action="/users/login", method="post")
+        input(type="text",name="username",placeholder="Enter Your username")
+        input(type="password",name="password",placeholder="Enter Your password")
+        button
+            |LogIn

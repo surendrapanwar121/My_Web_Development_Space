@@ -1,0 +1,28 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psDcbyCatg.css")
+
+block content
+    .container 
+        h3 Our Best #{category} Doctors For You.
+        .row 
+            each item in doctors 
+                - var doctorUsername = item.username;
+                - var imgUrl = '/uploads/' + item.imgName;
+                .col-lg-3.col-md-4.col-6.boxx
+                    .card
+                        img.card-img-top(src=imgUrl, alt='We Will Attach Image Soon')
+                        .card-body
+                            h4.card-title #{item.type}
+                            p.card-text  #{item.firstname} #{item.lastname}
+                            p Experience
+                                em  #{item.experience} years
+                            //- if item.online
+                            //-     a.a2.card-link.btn2.btn.btn-secondary.btn-sm(href='#') Consult Now
+                            //- else    
+                            //-     p Offline
+                            -var link = '/patient/bookAppointmentforDc/' + doctorUsername;
+                            a.card-link.btn1.btn.btn-info.btn-sm(href=link) Book Appointment
+
+

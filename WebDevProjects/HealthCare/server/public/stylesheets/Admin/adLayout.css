@@ -1,0 +1,36 @@
+/* Navigation Bar */
+.navbar-brand{
+    font-family: Ubuntu;
+    font-size: 1.7rem;
+}
+.nav-link{
+    font-size: 1.1rem;
+    font-family: 'Montserrat-Light';
+}
+.nav-it{
+    padding: 0px 5px;
+}
+.navbar-text{
+    font-size: 1.1rem;
+    font-family: 'Montserrat-Light';
+}
+.nav-user{
+    font-family: Ubuntu;
+    padding: 0 35px 0 0;
+    color: rgb(33 249 209 / 67%);
+    color: #bfb051;
+}
+.nav-user:hover{
+    color: rgba(255,255,255,.5);
+}
+
+/* Media Query */
+@media (max-width:767px) {
+    li.nav-it{
+        list-style: square;
+        
+    }
+    .nav-it a.nav-link{
+        width: 200px;
+    }
+}

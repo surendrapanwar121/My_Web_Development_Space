@@ -1,0 +1,42 @@
+extends ../layout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/loginSignup/login.css")
+    link(rel="stylesheet", href="/stylesheets/loginSignup/signdc.css")
+
+block content
+    .container 
+        h1 SignUp 
+        form(action="/users/loginSignup/dc", method="post",enctype="multipart/form-data") 
+            label(for="image") Upload Image
+            input(type="file", name="image" ,id="image",placeholder="Enter Your Image",required)
+            input(type="text" ,name="firstname" ,placeholder="Enter Your Firstname",required)
+            input(type="text" ,name="lastname" ,placeholder="Enter Your Lastame",required )
+            input(type="text" ,name="experience" ,placeholder="Enter Your Experience",required )
+            input(type="text" ,name="speciality" ,placeholder="Enter Your Speciality",required )
+            //Surround the select box within a "custom-select" DIV element. Remember to set the width:
+            //- .custom-select(style='width:250px;')
+            //-     select
+            //-         option(value='0') Select car:
+            //-         option(value='1') Audi
+            //-         option(value='2') BMW
+            //-         option(value='3') Citroen
+            //-         option(value='4') Ford
+            //-         option(value='5') Honda
+            //-         option(value='6') Jaguar
+            //-         option(value='7') Land Rover
+            //-         option(value='8') Mercedes
+            //-         option(value='9') Mini
+            //-         option(value='10') Nissan
+            //-         option(value='11') Toyota
+            //-         option(value='12') Volvo
+            input(type="text" ,name="number" ,placeholder="Enter Your Number",required )
+            input(type="email" ,name="email" ,placeholder="Enter Your Email",required )
+            input(type="text" ,name="address" ,placeholder="Enter Your Address",required )
+            input(type="text" ,name="age" ,placeholder="Enter Your Age",required )
+            input(type="text",name="username",placeholder="Enter Your username",required)
+            input(type="password",name="password",placeholder="Enter Your password",required)
+            button.btn 
+                |SignUp
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js") 
+    script(src="/javascripts/signdc.js")

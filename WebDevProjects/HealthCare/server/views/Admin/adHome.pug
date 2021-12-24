@@ -1,0 +1,10 @@
+extends adLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Admin/adHome.css")
+
+block content
+    .container
+        h1 Welcome #{type} #{username} On HealthCare
+        //- h3 See the list of Doctor and Pharmacist for Verification 
+        a.btn.btn-info.btn-lg.btn-block(href="/admin/ad_Dc&Ph_list") See the list of Doctor and Pharmacist for Verification

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating CSS Transitions</title>
+    <style>
+        #box {
+            background-color: greenyellow;
+            display: flex;
+            width: 200px;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+            /* transition-property: background-color,color; */
+            transition-property: all;
+            transition-duration: 3s;
+            transition-delay: .5s;
+
+        }
+
+        #box:hover {
+            background-color: rgb(197, 70, 38);
+            color: cornflowerblue;
+            width: 300px;
+            height: 250px;
+            border-radius: 30px;
+            font-size: 40px;
+        }
+        .bapcont{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cont {
+            height: 250px;
+            width: 400px;
+            background-color: chartreuse;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #box2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: crimson;
+            border: 2px solid black;
+            border-radius: 3px;
+            width: 150px;
+            height: 130px;
+            /* transform: rotate(40deg); */
+            transition: all 1s ease-in;
+        }
+        #box2:hover{
+               /* transform: rotate(140deg);  */
+               /* transform :skew(30deg); */
+               /* transform: scale(2); */
+               /* transform: translateX(100px); */
+               transform: translate(123px,53px);
+        }
+    </style>
+</head>
+
+<body>
+    <h3>This is CSS Transition Tutorial.</h3>
+    <div class="container">
+        <div id="box">
+            This is Box.
+        </div>
+    </div>
+    <hr>
+    <h3>This is CSS Transform Tutorial.</h3>
+    <div class="bapcont">
+        <div class="cont">
+            <div id="box2">This Is A Another Box.</div>
+        </div>
+    </div>
+</body>
+</body>
+
+</html>

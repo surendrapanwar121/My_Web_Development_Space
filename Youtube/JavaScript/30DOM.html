@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulating</title>
+</head>
+<body>
+       <div id="main" class="conatiner">
+           <ul id="nav"> 
+               <li>Home</li>
+               <li>About</li>
+               <li>Contact</li>
+               <li>Services</li>
+           </ul>
+       </div>
+       <div class="container">
+           Another Container.
+       </div>
+       <script>
+           let vr=document.getElementById('main');
+           console.log(vr);
+           let nv=document.getElementById('nav');
+           console.log(nv);
+
+           let sel=document.querySelector('.container');
+           console.log(sel);
+       </script>
+</body>
+</html>

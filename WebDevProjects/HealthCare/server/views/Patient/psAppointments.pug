@@ -1,0 +1,44 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psAppointments.css")
+
+block content
+    h2 All Appointments
+    -var i=1
+    .container
+        each item in appointments 
+            -var delUrl= '/patient/deleteAppointment/' + item._id;
+            .card.text-center
+                .card-header
+                    p.left #{i++}.
+                    p.right #{item.state}
+                    | Doctor #{item.doctor.firstname} #{item.doctor.lastname}
+                .card-body
+                    h5.card-title Timing:- #{item.time} #{item.date}
+                    p.card-text Problem #{item.problem}
+                    if item.state=='Approved'
+                        p Link For meeting 
+                            a.lnk(href=item.meetingLink) #{item.meetingLink}
+                        p Doctor Moblie No. #{item.doctor.number}
+                    if item.state=='Rejected'
+                        p Reject Reason:- #{item.rejectReason}
+
+                    if(item.state =='Done')
+                        a.btn.btn-light.btn-lg.download-button(href=delUrl)
+                            i.fas.fa-trash-alt
+                                |  Delete Appointment
+                        a.btn.btn-light.btn-lg.download-button(href='/patient/psPrescription/nill')
+                            i.fas.fa-file-prescription
+                                |  See Prescription 
+                    else if(item.state =='Rejected')
+                        a.btn.btn-light.btn-lg.download-button(href=delUrl)
+                            i.fas.fa-trash-alt
+                                |  Delete Appointment
+                    else
+                        a.btn.btn-light.btn-lg.download-button(href=delUrl)
+                            i.i.fas.fa-window-close
+                                |  Cancel Appiontment
+                .card-footer.text-muted
+                    | #{i} days ago
+

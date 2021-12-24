@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope of Variable</title>
+    <script>
+                //  LET VARIABLE
+            // const a=9;   //it can not be changed
+            // let l=5;     // its scope is whitin block {}     here l is global variable 
+            // {
+            //   let l=7;                                   //  here l is local variable
+            //   console.log(l);
+            // }
+            //   switch (l) {
+            //       case 3:
+            //         console.log("ans is"+l);
+            //           break;
+            //           case 5:
+            //            { console.log("ans is "+l);
+            //              break; }
+            //       default:
+            //         console.log("nothing");
+            //           break;
+            //   }
+
+                 //  OBJECT
+              // let employee={
+              //   coder : "Suren",
+              //   rating : 2,
+              //   channel1 : "codechef",
+              //   "channel 2" : "codeforces",
+              // }
+              // console.log(employee);
+              // console.log(employee.rating);
+              // console.log(employee['coder']);
+              // console.log(employee['channel 2']);
+
+                // ARRAY
+              // let names=[1,2,4,"hello",undefined];
+              // console.log(names);
+              // names.push("insert");
+              // let len=names.length;
+              // console.log(names[5]+" "+len);
+               
+              //  let name=new Array(4);
+              //   name[0]=5;
+              //   name[1]=15;
+              //   console.log(name);
+
+                // FUNCTION
+               function sum(a,b) {
+                 return a+b;
+               } 
+               console.log("Sum of 4 and 5 is = "+sum(4,5));
+    </script>
+</head>
+<body>
+       <h2>JavaScript Variable Scopes</h2>
+</body>
+</html>

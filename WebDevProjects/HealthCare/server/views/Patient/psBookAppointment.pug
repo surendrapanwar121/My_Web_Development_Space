@@ -1,0 +1,24 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psBookAppointment.css")
+
+block content
+    each item in doctor
+        h2 Hello Patient Book Your Appointment For Doctor #{item.firstname} #{item.lastname}
+        .container
+            - var doctorUsername = item.username;
+            -var link = "/patient/bookAppointmentforDc/" + doctorUsername;
+            form(action=link, method="post") 
+                |Enter Time For Appointment :
+                input(type="time", name="time") 
+                |Enter Date For Appointment :
+                input(type="date", name="date")
+                |Enter What Probelm You Have In Short :
+                textarea(name="problem",rows="4",cols="20")
+                button.btn(value=item._id,name='dcId')
+                    |Book Appointment
+        .information 
+            li Our Doctor will see your appointment soon, and they will check your problem and time for consult.
+            li Don't worry They will send you further details for consultancy soon.
+            li Check your appointment section for further details.

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApNi GyM</title>
+    <style>
+        body {
+            color: white;
+            height: 1000px;
+            margin: 0px;
+            padding: 0px;
+            background: url('img/g5.jpg');
+        }
+
+        #id1 {
+            background-color: #63586d;
+            border: 3px solid rgb(131, 92, 92);
+            border-radius: 10px;
+            height: 30px;
+            padding: 15px 2px;
+            margin: 5px 10px;
+        }
+
+        .container {
+            background-color: rgb(129, 76, 76);
+            border-radius: 5px;
+            font-size: 20px;
+            border: solid 2px black;
+            display: inline;
+            padding: 3px 3px;
+        }
+
+        .gym{
+            display: inline;
+            position: relative;
+            padding: 3px 30px;
+            margin-left: 230px;
+        }
+        #gym{
+            width: 50px;
+            font-size: 25px;
+        }
+        #id2 {
+            float: right;
+            margin-right: 10px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: purple;
+        }
+
+        #active {
+            text-decoration: underline;
+        }
+
+        #rdy {
+            font-size: 100px;
+            margin: 30px;
+        }
+
+        .frm {
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            width: 300px;
+            height: 300px;
+            margin: 10px 20px;
+        }
+
+        .formgro {
+            height: 20px;
+            display: block;
+            margin: 15px 50px;
+        }
+
+        .formgro input {
+            border-radius: 7px;
+            text-align: center;
+        }
+
+        .frm h1 {
+            margin: 2px 5px;
+        }
+
+        .formgro button {
+            border-radius: 6px;
+            display: block;
+            width: 130px;
+            height: 30px;
+            margin: 2px 100px;
+            cursor: pointer;
+        }
+        #gym:hover{
+            color: white;
+            cursor:grab;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="id1">
+        <div class="container"><a href="#" id="active">Home</a></div>
+        <div class="container"><a href="#">Our Traners</a></div>
+        <div class="container"><a href="#">Our Gyms</a></div>
+        <div class="container"><a href="#">AboutUs</a></div>
+        <div class="gym"><a id="gym">ApNi GyM</a></div>
+        <div class="container" id="id2"><a href="log.html" target="_blank">LogIn</a></div>
+    </header>
+    <h3 id="rdy">Ready To Fit</h3>
+    <div class="frm">
+        <h1>Join Us</h1>
+        <form action="noaction.php">
+            <div class="formgro">
+                <input type="text" name="" id="" placeholder="Enter Your Name">
+            </div>
+            <div class="formgro">
+                <input type="text" name="" id="" placeholder="Phone no.">
+            </div>
+            <div class="formgro">
+                <input type="text" name="" id="" placeholder="Email Address">
+            </div>
+            <div class="formgro">
+                <input type="text" name="" id="" placeholder="Your Address">
+            </div>
+            <div class="formgro">
+                <input type="text" name="" id="" placeholder="Password">
+            </div>
+            <div class="formgro">
+                <input type="text" name="" id="" placeholder="Re-Enter Password">
+            </div>
+            <div class="formgro">
+                <button type="submit" id="sub">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

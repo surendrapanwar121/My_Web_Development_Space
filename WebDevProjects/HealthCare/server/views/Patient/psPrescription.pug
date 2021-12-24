@@ -1,0 +1,36 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psPrescription.css")
+
+block content
+    .container 
+        h3 All Prescription 
+        -var i=1;
+        each item in prescriptions
+            if item.visibility != 'DOCTOR'
+                -var timestamp = item._id.getTimestamp();
+                -var delPrescription = '/patient/psDeletePrescription/' + item._id;
+                -var buyMedicine = '/patient/allPh/' + item._id;
+                -var buyMedicineFromSpecificDoctor = '/patient/buyMedicine/' + item._id + '/' + pharmacistUsername;
+                .card.text-center
+                        .card-header
+                            p.left #{i++}.
+                            p.right Disease #{item.disease}
+                            | Doctor #{item.doctor.firstname} #{item.doctor.lastname}
+                        .card-body
+                            p PRESCRIPTION
+                            p Created On #{timestamp}
+                            p=item.prescription
+                            if pharmacistUsername == 'nill'
+                                a.btn.btn1.btn-light.btn-lg.download-button(href=buyMedicine)
+                                    i.fas.fa-pills
+                                        |  Buy Medicine
+                                a.btn.btn2.btn-light.btn-lg.download-button(href=delPrescription)
+                                    i.fas.fa-trash-alt
+                                        |  Delete Prescription  
+                        if pharmacistUsername != 'nill'
+                            a.btn.btn2.btn-light.btn-lg.download-button(href=buyMedicineFromSpecificDoctor)
+                                i.fas.fa-pills
+                                    |  Buy Medicine for This Prescription
+                        

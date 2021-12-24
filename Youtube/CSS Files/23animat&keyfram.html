@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation And Keyframes</title>
+    <style>
+          .container{
+              display: flex;
+              background-color: rosybrown;
+          }
+          .box{
+              width: 100px;
+              height: 150px;
+              background-color: royalblue;
+          }
+          #box1{
+              position: relative;
+              animation-name: suren1;
+              animation-duration: 2s;
+              animation-iteration-count: 3;
+          }
+          #box2{
+              margin: 0px 300px;
+              position: relative;
+              animation-name: suren2;
+              animation-duration: 2s;
+              animation-iteration-count: 3;
+          }
+          @keyframes suren1{
+              from{
+              width: 100px;
+              }
+              to{
+              width: 400px;
+              }
+          }
+          @keyframes suren2{
+              0%{
+                  top:0px;
+                  left:0px;
+              }
+              25%{
+                  top:150px;
+                  left:0px;
+              }
+              50%{
+                  top:150px;
+                  left:100px;
+              }
+              100%{
+                  top:0px;
+                  left:100px;
+              }
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">This Is Left Box.</div>
+        <div class="box" id="box2">This Is Right Box.</div>
+    </div>
+</body>
+</html>

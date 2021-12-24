@@ -1,0 +1,74 @@
+extends dcLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Doctor/dcAppointments.css")
+
+block content
+    h2 All Appointments
+    -var i=1
+    .container
+        //- label(for="srch") Search Appointment  
+        //- input(type="search", id="srch", name="") 
+        each item in appointments 
+            if item.state!='Rejected'
+                -var delUrl= '/doctor/deleteAppointment/' + item._id;
+                -var doneUrl= '/doctor/doneAppointment/' + item._id;
+                //- -var UpdUrl= '/doctor/updateAppointment/' + item._id;
+                //- -var aprUrl= '/doctor/approveAppointment/' + item._id;
+                -var appUrl= '/doctor/AppImpRej/' + item._id + '/A';
+                -var impUrl= '/doctor/AppImpRej/' + item._id + '/I';
+                -var rejUrl= '/doctor/AppImpRej/' + item._id + '/R';
+                -var meetLink = '//' + item.meetingLink;
+                -var makePrescription = '/doctor/makePrescription/' + item.patient._id + '/' + item._id;
+                .card.text-center
+                    .card-header
+                        p.left #{i++}.
+                        p.right #{item.state}
+                        | Patient #{item.patient.firstname} #{item.patient.lastname}
+                    .card-body
+                        h5.card-title Timing:- #{item.time} #{item.date}
+                        p.card-text Problem #{item.problem}
+                        if item.state=='Approved'
+                            p Link For meeting 
+                                a.lnk(href=meetLink, target='_blank') #{item.meetingLink}
+                            p Doctor Moblie No. #{item.doctor.number}
+                        if(item.state =='Done')
+                            if item.prescribed == false
+                                a.btn.btn-light.btn-lg.download-button(href=makePrescription)
+                                    i.fas.fa-file-prescription
+                                        |  Make Prescription
+                            a.btn.btn-light.btn-lg.download-button(href=delUrl)
+                                i.fas.fa-trash-alt
+                                    |  Delete Appointment
+                        else if item.state=='Pending'
+                            a.btn.btn1.btn-light.btn-lg.download-button(href=appUrl)
+                                i.fas.fa-check
+                                    |  Approve Appiontment
+                            a.btn.btn2.btn-light.btn-lg.download-button(href=impUrl)
+                                i.far.fa-clock
+                                    |  Improve Timing
+                            a.btn.btn3.btn-light.btn-lg.download-button(href=rejUrl)
+                                i.fas.fa-window-close
+                                    |  Reject Appiontment
+                        else 
+                            a.btn.btn2.btn-light.btn-lg.download-button(href=doneUrl)
+                                i.features-icon.fas.fa-check-square
+                                    |  Appiontment Completed
+                            a.btn.btn2.btn-light.btn-lg.download-button(href=impUrl)
+                                i.far.fa-clock
+                                    |  Improve Timing
+                            a.btn.btn3.btn-light.btn-lg.download-button(href=rejUrl)
+                                i.fas.fa-window-close
+                                    |  Cancel Appiontment
+                        .box
+                            form(action='#', method="post") 
+                                |Enter Time For Appointment :
+                                input(type="time", name="time") 
+                                |Enter Date For Appointment :
+                                input(type="date", name="date")
+                                button.btn.btn-primary(value=item._id,name='dcId')
+                                    |Ok
+                    .card-footer.text-muted
+                        | #{i} days ago
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js") 
+    script(src="/javascripts/Doctor/dcAppointment.js")

@@ -1,0 +1,22 @@
+body{
+    background-color:#ff4c68;
+    font-family: 'Montserrat', sans-serif; 
+    text-align: center;
+}.container{
+    margin-top: 3%;
+}
+h1{
+    color: white;
+    margin-bottom: 2%;
+}
+h3{
+    color: white;
+    font-family: 'Montserrat-Italic', sans-serif;
+    margin-bottom: 2%; 
+}
+.btn{
+    background-color: rgb(134, 199, 137);
+    color: black;
+    width: 60%;
+    margin: auto;
+}

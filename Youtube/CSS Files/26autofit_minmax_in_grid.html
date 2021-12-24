@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autofit and MinMax In Grid</title>
+    <style>
+        .container1 {
+            border: 2px solid black;
+            padding:5px;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+         
+        .container2 {
+            border: 2px solid black;
+            padding:5px;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas: 
+            'navbar navbar navbar navbar'
+            'section section section aside'
+            'footer footer footer footer'
+            ;
+        }
+        .box {
+            background-color: rgb(158, 151, 142);
+            border: 1px solid black;
+            padding: 15px;
+        }
+        #navbar{
+            grid-area:navbar;
+        }
+        #section{
+            grid-area:section;
+        }
+        #aside{
+            grid-area:aside;
+        }
+        #footer{
+            grid-area:footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <div class="box">This is 1 Item</div>
+        <div class="box">This is 2 Item</div>
+        <div class="box">This is 3 Item</div>
+        <div class="box">This is 4 Item</div>
+        <div class="box">This is 5 Item</div>
+        <div class="box">This is 6 Item</div>
+        <div class="box">This is 7 Item</div>
+        <div class="box">This is 8 Item</div>
+        <div class="box">This is 9 Item</div>
+        <div class="box">This is 10 Item</div>
+        <div class="box">This is 11 Item</div>
+        <div class="box">This is 12 Item</div>
+    </div>
+    <br>
+    <div class="container2">
+        <div id="navbar" class="box">Home About Us Contact LogIn</div>
+        <div id="section" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A nisi, quis voluptatibus aperiam
+            nam dignissimos tempora, amet accusantium incidunt impedit eligendi cumque perspiciatis recusandae ipsa
+            excepturi molestias aliquid exercitationem pariatur, magnam maiores iusto consequatur suscipit! Voluptates
+            itaque doloribus vel nobis neque nisi voluptate, esse numquam, deserunt, assumenda nam quos repudiandae?
+        </div>
+        <div id="aside" class="box">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt ut saepe reiciendis!</div>
+        <div id="footer" class="box">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    </div>
+</body>
+
+</html>

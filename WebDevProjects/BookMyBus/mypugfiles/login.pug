@@ -1,0 +1,15 @@
+extends base.pug
+
+block style
+    style
+        include ../static/stylehome.css
+        include ../static/stylelogin.css
+
+block content
+    div.cont
+        form(action="/", method="post",class="myform")
+            h1 LogIn        
+            input(type="email",name="email",placeholder="Enter Your Gamil",class="myinput")
+            input(type="password",name="password",placeholder="Enter Your Password",class="myinput")
+            button(class="btn")
+                |LogIn

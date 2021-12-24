@@ -1,0 +1,46 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psOrder.css")
+
+block content
+    .container 
+        h3 All Orders 
+        -var i=1;
+        each item in orders
+            if ( item.visibility != 'PHARMACY' )
+                -var timestamp = item._id.getTimestamp();
+                -var delOrder = '/patient/psDeleteOrder/' + item._id;
+                -var conformOrder = '/patient/psConfromOrder/' + item._id;
+                -var reOrder = '/patient/psRe-Order/' + item._id;
+                .card.text-center
+                        .card-header
+                            p.left #{i++}.
+                            p.right #{item.state}
+                            | Pharmacist #{item.pharmacist.firstname} #{item.pharmacist.lastname}
+                        .card-body
+                            p PRESCRIPTION
+                            p=item.prescription
+                            if item.state!= 'Pending'
+                                p Price:- #{item.price}
+                                p Delivery Date:- #{item.deliveryDate}
+                                p Deliver Address:- #{item.deliveryAddress}
+                            if item.state == 'Waiting for Patient Conformation'
+                                a.btn.btn1.btn-light.btn-lg.download-button(href=conformOrder)
+                                    i.fas.fa-box-open
+                                        |  Conform Order
+                                a.btn.btn2.btn-light.btn-lg.download-button(href=delOrder)
+                                    i.fas.fa-window-close
+                                        |  Cancel Order 
+                            if item.state == 'Delivered'
+                                a.btn.btn1.btn-light.btn-lg.download-button(href=delOrder)
+                                    i.fas.fa-box-open
+                                        |  Delete Order
+                                a.btn.btn2.btn-light.btn-lg.download-button(href=reOrder)
+                                    i.fas.fa-box
+                                        |  Re-Order 
+                        if item.state == 'Pending'
+                            a.btn.btn2.btn-light.btn-lg.download-button(href=delOrder)
+                                i.fas.fa-window-close
+                                    |  Cancel Order 
+                        

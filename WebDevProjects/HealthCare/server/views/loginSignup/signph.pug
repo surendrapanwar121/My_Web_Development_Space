@@ -1,0 +1,22 @@
+extends ../layout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/loginSignup/login.css")
+
+block content
+    .container 
+        h1 SignUp 
+        form(action="/users/loginSignup/ph", method="post",enctype="multipart/form-data") 
+            label(for="image") Upload Image
+            input(type="file", name="image" ,id="image",placeholder="Enter Your Image",required)
+            input(type="text" ,name="firstname" ,placeholder="Enter Your Firstname",required)
+            input(type="text" ,name="lastname" ,placeholder="Enter Your Lastame",required )
+            input(type="text" ,name="address" ,placeholder="Enter Your Address",required )
+            input(type="text" ,name="number" ,placeholder="Enter Your Number",required )
+            input(type="text" ,name="shopname" ,placeholder="Enter Your Shop-Name",required )
+            input(type="email" ,name="email" ,placeholder="Enter Your Email",required )
+            input(type="text" ,name="age" ,placeholder="Enter Your Age",required )
+            input(type="text",name="username",placeholder="Enter Your username",required)
+            input(type="password",name="password",placeholder="Enter Your password",required)
+            button.btn 
+                |SignUp

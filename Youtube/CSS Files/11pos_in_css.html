@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning in CSS</title>
+    <style>
+        .container{
+            height: 3000px;
+            background-color: burlywood;
+            border: solid black 2px;
+            padding: 5px 5px;
+        }
+        .box {
+            background-color: chocolate;
+            border: solid red 2px;
+            margin: 2px 2px;
+            padding: 1px 3px;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+
+        #box3 {
+            position: relative;
+            top: 30px;
+            right: 10px;
+        }
+        #box4{
+            width:100px ;
+            height: 100px;
+            position: absolute;
+            top:70px;
+            left: 60px;
+        }
+        #box6{
+            right: 14px;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box" id="box1">BOX-1</div>
+        <div class="box" id="box2">BOX-2</div>
+        <div class="box" id="box3">BOX-3</div>
+        <div class="box" id="box4">BOX-4</div>
+        <div class="box" id="box5">BOX-5</div>
+        <div class="box" id="box6">BOX-6</div>
+    </div>
+</body>
+
+</html>

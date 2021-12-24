@@ -1,0 +1,32 @@
+extends psLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Patient/psHome.css")
+
+block content
+    h3 Welcome #{type} #{username} On HealthCare
+    .container
+        .row 
+            .col-md-6.boxx
+                .card(style='width: 24rem;') 
+                    img.card-img-top(src='/images/doctor2.jpg', alt='Doctor-Image')
+                    .card-body 
+                        h5.card-title Find Best Doctor
+                        p.card-text for your Treatment.
+                    ul.list-group.list-group-flush
+                        li.list-group-item Consult Online or Book Appointment.
+                        li.list-group-item Get Prescription After Consult. 
+                    .card-body 
+                        a.card-link.btn.btn-success(href='/patient/allDcCatg',) GO
+            .col-md-6.boxx
+                .card(style='width: 26rem;')
+                    img.card-img-top(src='/images/pharmacy.png', alt='Pharmacy-Image')
+                    .card-body 
+                        h5.card-title Find Best Pharmacy
+                        p.card-text for your Medicines. 
+                    ul.list-group.list-group-flush
+                        li.list-group-item Online Order or Check Availability of Medicines.
+                        li.list-group-item Get Medicines At Home By Prescription. 
+                    .card-body 
+                        a.card-link.btn.btn-success(href='/patient/allPh/nill',) GO
+        

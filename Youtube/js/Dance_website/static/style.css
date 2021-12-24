@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#navbar{
+    background-color: black;
+    padding: 13px 14px;
+    font-family: 'Lacquer', cursive;
+}
+#navbar ul{
+    display: flex;
+    margin-left: 60px;
+    /* justify-content: center; */
+}
+#navbar li{
+    list-style: none;
+    margin: 10px;
+}
+#navbar ul .log{
+    margin-left: 530px;
+}
+#navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 6px 20px;
+    font-size: 1.3rem;
+}
+#navbar a:hover{
+    background-color: white;
+    color: black;
+    border-radius: 7px;
+}
+
+#introsec{
+  background: center /cover no-repeat url("/static/bg.jpg");
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.4rem;
+}
+#flw{
+    margin-top: 2px;
+    color: #d21bc4;
+    font-weight: bold;
+}
+
+#ourmission{
+    background-color:white;
+    height: 300px;
+}
+.card{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 23px 22px;
+    width: 30%;
+    height: 180px;
+    display: inline-block;
+}
+.card h3{
+    text-align: center;
+    margin: 12px;
+}
+
+#sponsorssec{
+    background-color: violet;
+    height: 300px;
+}
+ h2{
+  padding-top: 10px;
+  text-align: center;
+}
+
+#footer{
+    height: 30px;
+    color: white;
+    background-color: black;
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block style
+  body
+    .navbar
+      ul
+        li #[a(href="/") Contacts]
+        if !name
+          li #[a(href="/users/signup") SignUp]
+        if !name
+          li #[a(href="/users/login") LogIn]
+        if name
+          li #[a(href="/users/logout") LogOut]
+        li.dropdown AboutUs
+          .about
+            a(href="/users/signup") SignUp
+            a(href="/users/login") LogIn
+            a(href="/users/logout") LogOut
+        if name
+          li.name User:-#{name}
+        else
+          li.name User:-Not Login
+
+    block content
+    footer.footer
+      | &#xa9; Developed by Surendra Panwar
+
+
+     

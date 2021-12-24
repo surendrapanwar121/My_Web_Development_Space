@@ -1,0 +1,13 @@
+extends phLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Pharmacy/phHome.css")
+
+block content
+    .top-box
+        h3.martop Hello Pharmacist Your are the Heart of our HealthCare
+        h3 keep Delivering Medicines.
+        h4 Check Orders of Patients go ahead.
+            a.btn(href='/pharmacy/phAllOrders')
+                i.features-icon.fas.fa-4x.fa-hand-point-right
+

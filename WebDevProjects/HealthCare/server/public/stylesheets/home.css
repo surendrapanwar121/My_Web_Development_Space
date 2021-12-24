@@ -1,0 +1,98 @@
+body {
+  font-family: 'Montserrat', sans-serif; 
+}
+.title{
+  background-color:#78c4d4;
+}
+
+
+/* Navigation Bar */
+.navbar{
+  padding: 5% 10% 8% 10%;
+}
+.navbar-brand{
+  font-family: Ubuntu-Bold;
+  font-size: 4rem;
+}
+.nav-item{
+  padding: 0px 18px;
+}
+.nav-link{
+  font-size: 1.4rem;
+  font-family: 'Montserrat-Light';
+}
+
+
+/* Title-Section */
+h1{
+  color: white;
+}
+.title-image{
+  width: 90%;
+  height: 80%;
+}
+
+
+/* Features Section */
+#features{
+  padding: 5% 12%;
+}
+.feature-box{
+ text-align: center; 
+ padding: 5%;
+}
+h3{
+  font-family: 'Montserrat-Bold';
+}
+p{
+  color: #8f8f8f;
+}
+.features-icon{
+  color: #88aab1;
+  margin-bottom: 4%;
+}
+.features-icon:hover{
+  color: #78c4d4;
+}
+
+
+/* Features Carousel Section */
+#carousel h5{
+  color: black;
+  font-size: 2rem;
+  font-size: 'Montserrat-Bold';
+}
+#carousel p{
+  font-size: 1.5rem;
+  color: white;
+  font-size: 'Montserrat-Italic';
+}
+#carousel{
+  /* background-color: #f39189; */
+  text-align: center;
+  padding: 0% 2%;
+}
+.card-item{
+  background-color: #c5d7bd;
+}
+.carousel-image{
+  width: 40%;
+  opacity: 0.8;
+}
+
+/* Footer Section */
+#footer p{
+  margin: 0;
+}
+#footer i{
+  color: #78c4d4;
+  font-size: 'Montserrat-Bold';
+}
+#footer{
+  background-color: #333;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  padding: 0 10%;
+  margin: 3% 2% 0 2%;
+}

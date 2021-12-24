@@ -1,0 +1,27 @@
+extends adLayout
+
+block style
+    link(rel="stylesheet", href="/stylesheets/Admin/ad_Dc&Ph_list.css")
+
+block content
+    .container 
+        h3 List of Doctor and Pharmacist requests that are pending for Approval.
+        .row 
+            each item in persons 
+                - var dcPh = item.username;
+                - var imgUrl = '/uploads/' + item.imgName;
+                -var link = '/admin/check/' + dcPh;
+                .col-lg-3.col-md-4.col-6.boxx
+                    .card
+                        img.card-img-top(src=imgUrl, alt='We Will Attach Image Soon')
+                        .card-body
+                            h4.card-title #{item.type}
+                            p.card-text  #{item.firstname} #{item.lastname}
+                            if item.type=="DOCTOR"
+                                li.list-group-item Speciality:- #{item.speciality}
+                            else 
+                                li.list-group-item ShopName:- #{item.shopname}
+                            a.card-link.btn1.btn.btn-info.btn-sm(href=link) Check Client
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js") 
+    script(src="/javascripts/Admin/ad_Dc&Ph_list.js")

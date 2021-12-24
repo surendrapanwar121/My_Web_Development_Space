@@ -1,0 +1,45 @@
+body{
+    color: #999c9c;
+    margin: 0px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    background-color: #bdd2b6;
+}
+.card-body{
+    background-color:blanchedalmond;
+    background-color:#d8e3e7;
+    /* Later on we add different background-color for Pending(dark) ,Approved(Green) ,Done(primary) ,Reject(Danger) Status */
+}
+.card.text-center{
+    width: 90%;
+    margin: 2% auto;
+}
+.left{
+    float: left;
+    margin: 0;
+}
+.right{
+    float: right;
+    margin: 0;
+    font-family: 'Ubuntu';
+}
+.lnk:hover{
+    text-decoration: none;
+}
+.btn{
+    margin: 1% 1%;
+}
+
+/* Alert For Timing */
+.btn-primary{
+    display: block;
+    margin: 4% auto 0;
+}
+
+.features-icon {
+    color: #b50000;
+    margin-bottom: 30%;
+}
+.features-icon:hover{
+    color: #aa6161;
+}
